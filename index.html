@@ -332,6 +332,10 @@
             background: linear-gradient(90deg, #888888, #bbbbbb);
         }
 
+        .day-card[data-day="13"] {
+            grid-column: span 3;
+        }
+
         .day-header {
             display: flex;
             justify-content: space-between;
@@ -488,6 +492,10 @@
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .day-card[data-day="13"] {
+                grid-column: span 2;
+            }
         }
 
         @media (max-width: 768px) {
@@ -509,6 +517,10 @@
 
             .cards-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .day-card[data-day="13"] {
+                grid-column: span 1;
             }
 
             .day-card {
@@ -598,9 +610,8 @@
 
     <div class="container">
         <div class="header">
-            <h1>Medical Study Blueprint</h1>
-            <p class="subtitle">Your 13-day journey to mastering Special Senses & Musculoskeletal Systems</p>
-            
+            <h1>Academic Comeback</h1>
+
             <div class="progress-container">
                 <div class="progress-header">
                     <span class="progress-label">Overall Progress</span>
