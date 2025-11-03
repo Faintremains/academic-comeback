@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Comeback - 13-Day Study Plan</title>
-    <meta name="description" content="Track your 13-day academic comeback journey with this interactive study plan tracker covering Ophthalmology, ENT, and Orthopedics topics.">
+    <title>Academic Comeback - Study Plan by Specialty</title>
+    <meta name="description" content="Track your academic comeback journey with this interactive study plan tracker covering Ophthalmology, ENT, Orthopedics, and Rheumatology topics.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23888888;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Cpath d='M30 45 L35 40 L45 50 L65 30 L70 35 L45 60 Z' fill='url(%23grad)'/%3E%3Cpath d='M25 70 L75 70 L75 75 L25 75 Z' fill='url(%23grad)'/%3E%3C/svg%3E">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -68,7 +68,7 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             position: relative;
         }
@@ -79,7 +79,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 40px;
+            padding: 50px;
             margin-bottom: 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
                         inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -104,17 +104,10 @@
             font-size: 3em;
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            background: linear-gradient(135deg, #ffffff, #888888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            background-size: 200% auto;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
         }
 
         .subtitle {
@@ -260,60 +253,40 @@
             letter-spacing: 1px;
         }
 
-        /* Day Cards Grid */
+        /* Specialty Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-bottom: 40px;
         }
 
-        .day-card {
+        .specialty-card {
             background: rgba(30, 30, 30, 0.4);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            padding: 25px;
+            padding: 35px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .day-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #666666, #aaaaaa, #666666);
-            background-size: 200% auto;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        .day-card:hover {
+        .specialty-card:hover {
             transform: translateY(-8px);
             border-color: rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
                         0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
-        .day-card.completed {
+        .specialty-card.completed {
             opacity: 0.6;
             background: rgba(40, 40, 40, 0.3);
             border-color: rgba(255, 255, 255, 0.15);
         }
 
-        .day-card.completed::before {
-            background: linear-gradient(90deg, #888888, #bbbbbb);
-        }
-
-        .day-card[data-day="13"] {
-            grid-column: span 3;
-        }
-
-        .day-header {
+        .specialty-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -322,7 +295,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .day-title {
+        .specialty-title {
             font-size: 1.4em;
             font-weight: 700;
             background: linear-gradient(135deg, #ffffff, #888888);
@@ -331,7 +304,7 @@
             background-clip: text;
         }
 
-        .day-badge {
+        .specialty-badge {
             background: rgba(255, 255, 255, 0.1);
             color: #cccccc;
             padding: 5px 14px;
@@ -465,13 +438,9 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (max-width: 1400px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .day-card[data-day="13"] {
-                grid-column: span 2;
             }
         }
 
@@ -481,7 +450,7 @@
             }
 
             .header {
-                padding: 25px;
+                padding: 30px;
             }
 
             h1 {
@@ -496,15 +465,11 @@
                 grid-template-columns: 1fr;
             }
 
-            .day-card[data-day="13"] {
-                grid-column: span 1;
+            .specialty-card {
+                padding: 25px;
             }
 
-            .day-card {
-                padding: 20px;
-            }
-
-            .day-title {
+            .specialty-title {
                 font-size: 1.2em;
             }
 
@@ -533,24 +498,15 @@
             }
         }
 
-        .day-card {
+        .specialty-card {
             animation: fadeIn 0.6s ease forwards;
             opacity: 0;
         }
 
-        .day-card:nth-child(1) { animation-delay: 0.05s; }
-        .day-card:nth-child(2) { animation-delay: 0.1s; }
-        .day-card:nth-child(3) { animation-delay: 0.15s; }
-        .day-card:nth-child(4) { animation-delay: 0.2s; }
-        .day-card:nth-child(5) { animation-delay: 0.25s; }
-        .day-card:nth-child(6) { animation-delay: 0.3s; }
-        .day-card:nth-child(7) { animation-delay: 0.35s; }
-        .day-card:nth-child(8) { animation-delay: 0.4s; }
-        .day-card:nth-child(9) { animation-delay: 0.45s; }
-        .day-card:nth-child(10) { animation-delay: 0.5s; }
-        .day-card:nth-child(11) { animation-delay: 0.55s; }
-        .day-card:nth-child(12) { animation-delay: 0.6s; }
-        .day-card:nth-child(13) { animation-delay: 0.65s; }
+        .specialty-card:nth-child(1) { animation-delay: 0.05s; }
+        .specialty-card:nth-child(2) { animation-delay: 0.15s; }
+        .specialty-card:nth-child(3) { animation-delay: 0.25s; }
+        .specialty-card:nth-child(4) { animation-delay: 0.35s; }
 
         /* Confetti effect when 100% */
         .confetti {
@@ -599,17 +555,17 @@
                     <div class="stat-label">Remaining</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number" id="days-remaining">13</div>
-                    <div class="stat-label">Days</div>
+                    <div class="stat-number" id="specialties-done">0</div>
+                    <div class="stat-label">Specialties Done</div>
                 </div>
             </div>
         </div>
 
         <div class="cards-grid">
-            <div class="day-card" data-day="1">
-                <div class="day-header">
-                    <span class="day-title">Day 1</span>
-                    <span class="day-badge" id="badge-1">0/3</span>
+            <div class="specialty-card" data-specialty="ophthalmology">
+                <div class="specialty-header">
+                    <span class="specialty-title">Ophthalmology</span>
+                    <span class="specialty-badge" id="badge-ophthalmology">0/6</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-1" onchange="updateProgress()">
@@ -617,41 +573,34 @@
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-2" onchange="updateProgress()">
-                    <label for="topic-2">ENT Radiology</label>
+                    <label for="topic-2">Red Eye</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-3" onchange="updateProgress()">
-                    <label for="topic-3">Red Eye</label>
-                </div>
-            </div>
-
-            <div class="day-card" data-day="2">
-                <div class="day-header">
-                    <span class="day-title">Day 2</span>
-                    <span class="day-badge" id="badge-2">0/3</span>
+                    <label for="topic-3">Ocular & Orbital Injuries</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-4" onchange="updateProgress()">
-                    <label for="topic-4">Ocular & Orbital Injuries</label>
+                    <label for="topic-4">Chronic Visual Loss</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-5" onchange="updateProgress()">
-                    <label for="topic-5">Chronic Visual Loss</label>
+                    <label for="topic-5">Sudden Vision Loss</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-6" onchange="updateProgress()">
-                    <label for="topic-6">Sudden Vision Loss</label>
+                    <label for="topic-6">Overview of Glaucoma</label>
                 </div>
             </div>
 
-            <div class="day-card" data-day="3">
-                <div class="day-header">
-                    <span class="day-title">Day 3</span>
-                    <span class="day-badge" id="badge-3">0/3</span>
+            <div class="specialty-card" data-specialty="ent">
+                <div class="specialty-header">
+                    <span class="specialty-title">Otorhinolaryngology</span>
+                    <span class="specialty-badge" id="badge-ent">0/14</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-7" onchange="updateProgress()">
-                    <label for="topic-7">Overview of Glaucoma</label>
+                    <label for="topic-7">ENT Radiology</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-8" onchange="updateProgress()">
@@ -661,13 +610,6 @@
                     <input type="checkbox" id="topic-9" onchange="updateProgress()">
                     <label for="topic-9">Acute & Chronic Middle Ear Diseases</label>
                 </div>
-            </div>
-
-            <div class="day-card" data-day="4">
-                <div class="day-header">
-                    <span class="day-title">Day 4</span>
-                    <span class="day-badge" id="badge-4">0/2</span>
-                </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-10" onchange="updateProgress()">
                     <label for="topic-10">Rhinology</label>
@@ -676,13 +618,6 @@
                     <input type="checkbox" id="topic-11" onchange="updateProgress()">
                     <label for="topic-11">Adeno-Tonsillar Diseases</label>
                 </div>
-            </div>
-
-            <div class="day-card" data-day="5">
-                <div class="day-header">
-                    <span class="day-title">Day 5</span>
-                    <span class="day-badge" id="badge-5">0/2</span>
-                </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-12" onchange="updateProgress()">
                     <label for="topic-12">Pediatric Airway</label>
@@ -690,13 +625,6 @@
                 <div class="topic-item">
                     <input type="checkbox" id="topic-13" onchange="updateProgress()">
                     <label for="topic-13">Nasal Discharge & Epistaxis</label>
-                </div>
-            </div>
-
-            <div class="day-card" data-day="6">
-                <div class="day-header">
-                    <span class="day-title">Day 6</span>
-                    <span class="day-badge" id="badge-6">0/3</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-14" onchange="updateProgress()">
@@ -710,13 +638,6 @@
                     <input type="checkbox" id="topic-16" onchange="updateProgress()">
                     <label for="topic-16">Neck Mass Evaluation</label>
                 </div>
-            </div>
-
-            <div class="day-card" data-day="7">
-                <div class="day-header">
-                    <span class="day-title">Day 7</span>
-                    <span class="day-badge" id="badge-7">0/2</span>
-                </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-17" onchange="updateProgress()">
                     <label for="topic-17">Acute Conditions of Oral Cavity</label>
@@ -724,13 +645,6 @@
                 <div class="topic-item">
                     <input type="checkbox" id="topic-18" onchange="updateProgress()">
                     <label for="topic-18">Benign Oropharyngeal Diseases</label>
-                </div>
-            </div>
-
-            <div class="day-card" data-day="8">
-                <div class="day-header">
-                    <span class="day-title">Day 8</span>
-                    <span class="day-badge" id="badge-8">0/2</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-19" onchange="updateProgress()">
@@ -742,10 +656,10 @@
                 </div>
             </div>
 
-            <div class="day-card" data-day="9">
-                <div class="day-header">
-                    <span class="day-title">Day 9</span>
-                    <span class="day-badge" id="badge-9">0/2</span>
+            <div class="specialty-card" data-specialty="orthopedics">
+                <div class="specialty-header">
+                    <span class="specialty-title">Orthopedics</span>
+                    <span class="specialty-badge" id="badge-orthopedics">0/9</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-21" onchange="updateProgress()">
@@ -755,13 +669,6 @@
                     <input type="checkbox" id="topic-22" onchange="updateProgress()">
                     <label for="topic-22">Upper Extremity Injury & Disease</label>
                 </div>
-            </div>
-
-            <div class="day-card" data-day="10">
-                <div class="day-header">
-                    <span class="day-title">Day 10</span>
-                    <span class="day-badge" id="badge-10">0/2</span>
-                </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-23" onchange="updateProgress()">
                     <label for="topic-23">Back Pain</label>
@@ -770,66 +677,52 @@
                     <input type="checkbox" id="topic-24" onchange="updateProgress()">
                     <label for="topic-24">Knee Trauma & Injuries</label>
                 </div>
-            </div>
-
-            <div class="day-card" data-day="11">
-                <div class="day-header">
-                    <span class="day-title">Day 11</span>
-                    <span class="day-badge" id="badge-11">0/2</span>
-                </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-25" onchange="updateProgress()">
-                    <label for="topic-25">Approach to Polyarthritis</label>
+                    <label for="topic-25">Orthopedics Trauma</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-26" onchange="updateProgress()">
-                    <label for="topic-26">Rheumatoid Arthritis</label>
-                </div>
-            </div>
-
-            <div class="day-card" data-day="12">
-                <div class="day-header">
-                    <span class="day-title">Day 12</span>
-                    <span class="day-badge" id="badge-12">0/3</span>
+                    <label for="topic-26">Bone Infections & Cast Application</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-27" onchange="updateProgress()">
-                    <label for="topic-27">Orthopedics Trauma</label>
+                    <label for="topic-27">Pediatric Ortho</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-28" onchange="updateProgress()">
-                    <label for="topic-28">Seronegative Arthritis</label>
+                    <label for="topic-28">Bone Lesion</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-29" onchange="updateProgress()">
-                    <label for="topic-29">Vasculitis</label>
+                    <label for="topic-29">Limping Child</label>
                 </div>
             </div>
 
-            <div class="day-card" data-day="13">
-                <div class="day-header">
-                    <span class="day-title">Day 13</span>
-                    <span class="day-badge" id="badge-13">0/5</span>
+            <div class="specialty-card" data-specialty="rheumatology">
+                <div class="specialty-header">
+                    <span class="specialty-title">Rheumatology</span>
+                    <span class="specialty-badge" id="badge-rheumatology">0/5</span>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-30" onchange="updateProgress()">
-                    <label for="topic-30">Systemic Lupus Erythematosus</label>
+                    <label for="topic-30">Approach to Polyarthritis</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-31" onchange="updateProgress()">
-                    <label for="topic-31">Bone Infections & Cast Application</label>
+                    <label for="topic-31">Rheumatoid Arthritis</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-32" onchange="updateProgress()">
-                    <label for="topic-32">Pediatric Ortho</label>
+                    <label for="topic-32">Seronegative Arthritis</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-33" onchange="updateProgress()">
-                    <label for="topic-33">Bone Lesion</label>
+                    <label for="topic-33">Vasculitis</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-34" onchange="updateProgress()">
-                    <label for="topic-34">Limping Child</label>
+                    <label for="topic-34">Systemic Lupus Erythematosus</label>
                 </div>
             </div>
         </div>
@@ -839,9 +732,18 @@
 
     <script>
         const totalTopics = 34;
-        const dayTopicCounts = {
-            1: 3, 2: 3, 3: 3, 4: 2, 5: 2, 6: 3, 7: 2, 
-            8: 2, 9: 2, 10: 2, 11: 2, 12: 3, 13: 5
+        const specialtyTopicCounts = {
+            'ophthalmology': 6,
+            'ent': 14,
+            'orthopedics': 9,
+            'rheumatology': 5
+        };
+
+        const specialtyTopicRanges = {
+            'ophthalmology': [1, 6],
+            'ent': [7, 20],
+            'orthopedics': [21, 29],
+            'rheumatology': [30, 34]
         };
 
         // Load saved progress from localStorage
@@ -859,6 +761,7 @@
         function updateProgress() {
             let completed = 0;
             let prevCompleted = parseInt(localStorage.getItem('prevCompleted') || '0');
+            let specialtiesCompleted = 0;
             
             // Count completed topics and save state
             for (let i = 1; i <= totalTopics; i++) {
@@ -871,29 +774,28 @@
                 }
             }
 
-            // Update day badges and card completion status
-            let topicIndex = 1;
-            for (let day = 1; day <= 13; day++) {
-                let dayCompleted = 0;
-                const topicsInDay = dayTopicCounts[day];
+            // Update specialty badges and card completion status
+            for (const [specialty, count] of Object.entries(specialtyTopicCounts)) {
+                let specialtyCompleted = 0;
+                const [start, end] = specialtyTopicRanges[specialty];
                 
-                for (let i = 0; i < topicsInDay; i++) {
-                    const checkbox = document.getElementById(`topic-${topicIndex}`);
+                for (let i = start; i <= end; i++) {
+                    const checkbox = document.getElementById(`topic-${i}`);
                     if (checkbox && checkbox.checked) {
-                        dayCompleted++;
+                        specialtyCompleted++;
                     }
-                    topicIndex++;
                 }
                 
-                const badge = document.getElementById(`badge-${day}`);
+                const badge = document.getElementById(`badge-${specialty}`);
                 if (badge) {
-                    badge.textContent = `${dayCompleted}/${topicsInDay}`;
+                    badge.textContent = `${specialtyCompleted}/${count}`;
                 }
                 
-                const card = document.querySelector(`.day-card[data-day="${day}"]`);
+                const card = document.querySelector(`.specialty-card[data-specialty="${specialty}"]`);
                 if (card) {
-                    if (dayCompleted === topicsInDay) {
+                    if (specialtyCompleted === count) {
                         card.classList.add('completed');
+                        specialtiesCompleted++;
                     } else {
                         card.classList.remove('completed');
                     }
@@ -912,10 +814,7 @@
             document.getElementById('progress-percentage').textContent = percentage + '%';
             document.getElementById('completed-count').textContent = completed;
             document.getElementById('remaining-count').textContent = remaining;
-
-            // Calculate days remaining (rough estimate)
-            const daysRemaining = Math.max(0, 13 - Math.floor(completed / (34/13)));
-            document.getElementById('days-remaining').textContent = daysRemaining;
+            document.getElementById('specialties-done').textContent = specialtiesCompleted;
 
             // Confetti effect when reaching 100%
             if (percentage === 100 && prevCompleted < totalTopics) {
