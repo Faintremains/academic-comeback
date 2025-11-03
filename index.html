@@ -26,7 +26,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -73,13 +72,12 @@
             position: relative;
         }
 
-        /* Header Section */
         .header {
             background: rgba(30, 30, 30, 0.5);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 50px;
+            padding: 50px 130px;
             margin-bottom: 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
                         inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -110,14 +108,6 @@
             background-clip: text;
         }
 
-        .subtitle {
-            color: #999999;
-            font-size: 1.1em;
-            font-weight: 300;
-            margin-bottom: 30px;
-        }
-
-        /* Progress Section */
         .progress-container {
             margin-top: 30px;
         }
@@ -191,7 +181,6 @@
             100% { left: 100%; }
         }
 
-        /* Stats Grid */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -202,7 +191,7 @@
         .stat-box {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            padding: 20px;
+            padding: 20px 55px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
@@ -253,7 +242,6 @@
             letter-spacing: 1px;
         }
 
-        /* Specialty Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -266,7 +254,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            padding: 35px;
+            padding: 35px 15px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -291,7 +279,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            padding-bottom: 15px;
+            padding: 0 15px 15px 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -314,17 +302,17 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        /* Topic Items */
         .topic-item {
             display: flex;
             align-items: center;
-            padding: 12px;
-            margin: 6px 0;
+            padding: 14px 24px;
+            margin: 8px 0;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
             position: relative;
+            width: 100%;
         }
 
         .topic-item::before {
@@ -353,7 +341,7 @@
         .topic-item input[type="checkbox"] {
             width: 20px;
             height: 20px;
-            margin-right: 12px;
+            margin-right: 15px;
             cursor: pointer;
             appearance: none;
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -399,7 +387,6 @@
             text-decoration: line-through;
         }
 
-        /* Scroll to top button */
         .scroll-top {
             position: fixed;
             bottom: 30px;
@@ -437,56 +424,6 @@
             font-weight: bold;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1400px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 15px;
-            }
-
-            .header {
-                padding: 30px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .subtitle {
-                font-size: 0.95em;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .specialty-card {
-                padding: 25px;
-            }
-
-            .specialty-title {
-                font-size: 1.2em;
-            }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .topic-item {
-                padding: 10px;
-            }
-
-            .topic-item label {
-                font-size: 0.9em;
-            }
-        }
-
-        /* Loading Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -508,13 +445,11 @@
         .specialty-card:nth-child(3) { animation-delay: 0.25s; }
         .specialty-card:nth-child(4) { animation-delay: 0.35s; }
 
-        /* Confetti effect when 100% */
         .confetti {
             position: fixed;
             width: 8px;
             height: 8px;
             background: #888888;
-            position: absolute;
             animation: confetti-fall 3s linear forwards;
         }
 
@@ -522,6 +457,58 @@
             to {
                 transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .header {
+                padding: 30px 45px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specialty-card {
+                padding: 25px 15px;
+            }
+
+            .specialty-title {
+                font-size: 1.2em;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-box {
+                padding: 20px 35px;
+            }
+
+            .topic-item {
+                padding: 12px 18px;
+            }
+
+            .topic-item label {
+                font-size: 0.9em;
+            }
+
+            .specialty-header {
+                padding: 0 10px 15px 10px;
             }
         }
     </style>
@@ -562,6 +549,7 @@
         </div>
 
         <div class="cards-grid">
+            <!-- Ophthalmology -->
             <div class="specialty-card" data-specialty="ophthalmology">
                 <div class="specialty-header">
                     <span class="specialty-title">Ophthalmology</span>
@@ -593,10 +581,15 @@
                 </div>
             </div>
 
+            <!-- ENT -->
             <div class="specialty-card" data-specialty="ent">
                 <div class="specialty-header">
                     <span class="specialty-title">Otorhinolaryngology</span>
                     <span class="specialty-badge" id="badge-ent">0/14</span>
+                </div>
+                <div class="topic-item">
+                    <input type="checkbox" id="topic-7" onchange="updateProgress()">
+                    <label for="topic-7">Hearing Loss & Audiology</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-8" onchange="updateProgress()">
@@ -648,10 +641,11 @@
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-20" onchange="updateProgress()">
-                    <label for="topic-20">Hearing Loss & Audiology</label>
+                    <label for="topic-20">ENT Emergencies</label>
                 </div>
             </div>
 
+            <!-- Orthopedics -->
             <div class="specialty-card" data-specialty="orthopedics">
                 <div class="specialty-header">
                     <span class="specialty-title">Orthopedics</span>
@@ -659,7 +653,7 @@
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-21" onchange="updateProgress()">
-                    <label for="topic-21">Spine traumatic & Non-traumatic Diseases</label>
+                    <label for="topic-21">Spine Traumatic & Non-traumatic Diseases</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-22" onchange="updateProgress()">
@@ -675,7 +669,7 @@
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-25" onchange="updateProgress()">
-                    <label for="topic-25">Orthopedics Trauma</label>
+                    <label for="topic-25">Orthopedic Trauma</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-26" onchange="updateProgress()">
@@ -683,11 +677,11 @@
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-27" onchange="updateProgress()">
-                    <label for="topic-27">Pediatric Ortho</label>
+                    <label for="topic-27">Pediatric Orthopedics</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-28" onchange="updateProgress()">
-                    <label for="topic-28">Bone Lesion</label>
+                    <label for="topic-28">Bone Lesions</label>
                 </div>
                 <div class="topic-item">
                     <input type="checkbox" id="topic-29" onchange="updateProgress()">
@@ -695,6 +689,7 @@
                 </div>
             </div>
 
+            <!-- Rheumatology -->
             <div class="specialty-card" data-specialty="rheumatology">
                 <div class="specialty-header">
                     <span class="specialty-title">Rheumatology</span>
@@ -727,122 +722,133 @@
     <div class="scroll-top" onclick="scrollToTop()"></div>
 
     <script>
-        const totalTopics = 34;
-        const specialtyTopicCounts = {
-            'ophthalmology': 6,
-            'ent': 14,
-            'orthopedics': 9,
-            'rheumatology': 5
+        const TOTAL_TOPICS = 34;
+        
+        const SPECIALTY_CONFIG = {
+            ophthalmology: { count: 6, range: [1, 6] },
+            ent: { count: 14, range: [7, 20] },
+            orthopedics: { count: 9, range: [21, 29] },
+            rheumatology: { count: 5, range: [30, 34] }
         };
 
-        const specialtyTopicRanges = {
-            'ophthalmology': [1, 6],
-            'ent': [7, 20],
-            'orthopedics': [21, 29],
-            'rheumatology': [30, 34]
-        };
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            updateProgress();
+        });
 
-        // Load saved progress from localStorage
-        window.onload = function() {
-            for (let i = 1; i <= totalTopics; i++) {
+        function loadProgress() {
+            for (let i = 1; i <= TOTAL_TOPICS; i++) {
                 const checkbox = document.getElementById(`topic-${i}`);
-                const saved = localStorage.getItem(`topic-${i}`);
-                if (saved === 'true') {
-                    checkbox.checked = true;
+                if (checkbox) {
+                    checkbox.checked = localStorage.getItem(`topic-${i}`) === 'true';
                 }
             }
-            updateProgress();
-        };
+        }
+
+        function saveProgress(topicId, checked) {
+            localStorage.setItem(topicId, checked.toString());
+        }
 
         function updateProgress() {
-            let completed = 0;
-            let prevCompleted = parseInt(localStorage.getItem('prevCompleted') || '0');
-            let specialtiesCompleted = 0;
-            
-            // Count completed topics and save state
-            for (let i = 1; i <= totalTopics; i++) {
-                const checkbox = document.getElementById(`topic-${i}`);
-                if (checkbox.checked) {
-                    completed++;
-                    localStorage.setItem(`topic-${i}`, 'true');
-                } else {
-                    localStorage.setItem(`topic-${i}`, 'false');
-                }
-            }
+            const stats = calculateProgress();
+            updateUI(stats);
+            checkForCompletion(stats);
+        }
 
-            // Update specialty badges and card completion status
-            for (const [specialty, count] of Object.entries(specialtyTopicCounts)) {
+        function calculateProgress() {
+            let completed = 0;
+            const specialtyStats = {};
+
+            // Calculate overall and specialty progress
+            for (const [specialty, config] of Object.entries(SPECIALTY_CONFIG)) {
                 let specialtyCompleted = 0;
-                const [start, end] = specialtyTopicRanges[specialty];
-                
+                const [start, end] = config.range;
+
                 for (let i = start; i <= end; i++) {
                     const checkbox = document.getElementById(`topic-${i}`);
-                    if (checkbox && checkbox.checked) {
+                    if (checkbox?.checked) {
                         specialtyCompleted++;
+                        completed++;
+                        saveProgress(`topic-${i}`, true);
+                    } else if (checkbox) {
+                        saveProgress(`topic-${i}`, false);
                     }
                 }
-                
-                const badge = document.getElementById(`badge-${specialty}`);
-                if (badge) {
-                    badge.textContent = `${specialtyCompleted}/${count}`;
-                }
-                
-                const card = document.querySelector(`.specialty-card[data-specialty="${specialty}"]`);
-                if (card) {
-                    if (specialtyCompleted === count) {
-                        card.classList.add('completed');
-                        specialtiesCompleted++;
-                    } else {
-                        card.classList.remove('completed');
-                    }
-                }
+
+                specialtyStats[specialty] = {
+                    completed: specialtyCompleted,
+                    total: config.count,
+                    isComplete: specialtyCompleted === config.count
+                };
             }
 
-            const remaining = totalTopics - completed;
-            const percentage = Math.round((completed / totalTopics) * 100);
+            return {
+                completed,
+                remaining: TOTAL_TOPICS - completed,
+                percentage: Math.round((completed / TOTAL_TOPICS) * 100),
+                specialties: specialtyStats,
+                specialtiesComplete: Object.values(specialtyStats).filter(s => s.isComplete).length
+            };
+        }
 
+        function updateUI(stats) {
             // Update progress bar
             const progressFill = document.getElementById('progress-fill');
-            progressFill.style.width = percentage + '%';
+            progressFill.style.width = `${stats.percentage}%`;
 
-            // Update text
-            document.getElementById('progress-text').textContent = `${completed}/${totalTopics}`;
-            document.getElementById('progress-percentage').textContent = percentage + '%';
-            document.getElementById('completed-count').textContent = completed;
-            document.getElementById('remaining-count').textContent = remaining;
-            document.getElementById('specialties-done').textContent = specialtiesCompleted;
+            // Update text displays
+            document.getElementById('progress-text').textContent = `${stats.completed}/${TOTAL_TOPICS}`;
+            document.getElementById('progress-percentage').textContent = `${stats.percentage}%`;
+            document.getElementById('completed-count').textContent = stats.completed;
+            document.getElementById('remaining-count').textContent = stats.remaining;
+            document.getElementById('specialties-done').textContent = stats.specialtiesComplete;
 
-            // Confetti effect when reaching 100%
-            if (percentage === 100 && prevCompleted < totalTopics) {
+            // Update specialty badges and completion states
+            for (const [specialty, data] of Object.entries(stats.specialties)) {
+                const badge = document.getElementById(`badge-${specialty}`);
+                if (badge) {
+                    badge.textContent = `${data.completed}/${data.total}`;
+                }
+
+                const card = document.querySelector(`.specialty-card[data-specialty="${specialty}"]`);
+                if (card) {
+                    card.classList.toggle('completed', data.isComplete);
+                }
+            }
+        }
+
+        function checkForCompletion(stats) {
+            const prevCompleted = parseInt(localStorage.getItem('prevCompleted') || '0');
+            
+            if (stats.percentage === 100 && prevCompleted < TOTAL_TOPICS) {
                 triggerConfetti();
             }
 
-            localStorage.setItem('prevCompleted', completed.toString());
+            localStorage.setItem('prevCompleted', stats.completed.toString());
         }
 
         function triggerConfetti() {
             const colors = ['#666666', '#888888', '#aaaaaa', '#cccccc', '#ffffff'];
+            
             for (let i = 0; i < 100; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
                     confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.left = `${Math.random() * 100}vw`;
                     confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confetti.style.animationDuration = `${Math.random() * 2 + 2}s`;
                     document.body.appendChild(confetti);
+                    
                     setTimeout(() => confetti.remove(), 3000);
                 }, i * 30);
             }
         }
 
         // Scroll to top functionality
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             const scrollTop = document.querySelector('.scroll-top');
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
+            scrollTop.classList.toggle('visible', window.pageYOffset > 300);
         });
 
         function scrollToTop() {
